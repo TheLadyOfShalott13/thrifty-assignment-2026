@@ -58,7 +58,7 @@ const RentalSearchHero = () => {
                               >
                                  <span className="inline-block h-[20px] w-[20px]">
                                     <Image
-                                       src={`./icons/deliver-to-me-car.svg`}
+                                       src={`./thrifty-assignment-2026/icons/deliver-to-me-car.svg`}
                                        alt="Deliver to me"
                                        width={20}
                                        height={20}
