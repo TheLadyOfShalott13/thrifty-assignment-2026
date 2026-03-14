@@ -6,7 +6,7 @@ import React from "react";
 export function DropoffDatetime() {
    /* styles */
    const labelStyle = "mb-1.5 block text-sm font-semibold leading-tight lg:text-[14px] text-black";
-   const inputStyle = "flex h-10 w-full items-center justify-between border border-gray-300 bg-white px-3 text-sm outline-none transition-all focus:border-blue-500 text-black";
+   const inputStyle = "flex h-10 px-3 py-2 rounded-md w-full items-center justify-between bg-white text-sm outline-none transition-all focus:border-blue-500 text-black";
 
 
    return <>
