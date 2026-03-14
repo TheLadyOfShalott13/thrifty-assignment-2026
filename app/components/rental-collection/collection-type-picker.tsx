@@ -1,5 +1,6 @@
 import React from "react";
 import { CollectionTypeProps } from "@/app/interfaces/collection-type-props";
+import {listItemStyle, listLabelStyle, listStyle, singleColStyle, radioInputStyle} from "@/app/styles/form-styles";
 
 export function CollectionTypePicker({
    isSameAsDelivery,
@@ -7,14 +8,7 @@ export function CollectionTypePicker({
    isSpecifyLocation,
    setIsSpecifyLocation,
 }: CollectionTypeProps) {
-   /* styles */
-   const elementStyle = "col-span-1";
-   const listStyle = "col-span-full flex gap-4 gap-mob-10 sm:gap-tab-13 lg:gap-web-13";
-   const listItemStyle = "flex items-center gap-1 gap-mob-6 sm:gap-tab-6 lg:gap-web-6";
-   const listLabelStyle = "flex items-center gap-1 gap-mob-6 sm:gap-tab-6 lg:gap-web-6 cursor-pointer";
-   const radioStyle = "block h-mob-13 w-mob-13 sm:h-tab-13 sm:w-tab-13 lg:h-web-13 lg:w-web-13";
-
-   return <div className={elementStyle}>
+   return <div className={singleColStyle}>
       <ul className={listStyle}>
          <li className={listItemStyle}>
             <label htmlFor="same-as-delivery" className={listLabelStyle}>
@@ -22,7 +16,7 @@ export function CollectionTypePicker({
                   type="radio"
                   name="same-as-delivery"
                   id="same-as-delivery"
-                  className={radioStyle}
+                  className={radioInputStyle}
                   checked={isSameAsDelivery}
                   onChange={() => {
                      setIsSameAsDelivery(!isSameAsDelivery)
@@ -38,7 +32,7 @@ export function CollectionTypePicker({
                   type="radio"
                   name="specify-location"
                   id="specify-location"
-                  className={radioStyle}
+                  className={radioInputStyle}
                   checked={isSpecifyLocation}
                   onChange={() => {
                      setIsSameAsDelivery(false)

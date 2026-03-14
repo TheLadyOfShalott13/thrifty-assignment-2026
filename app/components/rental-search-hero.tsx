@@ -7,6 +7,13 @@ import { SEARCH_TABS, SearchTabs } from "@/app/constants/search-tabs";
 import DeliveryForm from "@/app/components/rental-delivery/delivery-form";
 import HeroBanner from "@/app/components/hero-banner";
 import HomepageMarquee from "@/app/components/homepage-marquee";
+import {
+    activeTabStyle,
+    deliveryToMeStyle, headerStyle,
+    inactiveTabStyle,
+    searchTabsStyle,
+    submitButtonStyle
+} from "@/app/styles/form-styles";
 
 
 const RentalSearchHero = () => {
@@ -19,7 +26,7 @@ const RentalSearchHero = () => {
          <HeroBanner />
 
          <div className="relative z-[2] mx-auto mb-8 w-full max-w-[93vw] lg:max-w-[75vw]">
-            <h1 className="hidden text-center text-2xl font-semibold capitalize text-white sm:block lg:text-3xl">
+            <h1 className={headerStyle}>
                Free Delivery & Collection on all Monthly Car Rentals - <br className="lg:hidden" />
                Available 24/7, <span className="text-xl">T&Cs APPLY.</span>
             </h1>
@@ -32,10 +39,7 @@ const RentalSearchHero = () => {
                      <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`flex-1 py-5 text-sm font-semibold uppercase transition-colors sm:text-lg 
-                           ${activeTab === tab.id ? 'bg-white text-black' : 'text-white hover:bg-blue-900'} 
-                           border-r border-white/30 last:border-r-0`}
-                     >
+                        className={`${searchTabsStyle} ${activeTab === tab.id ? activeTabStyle : inactiveTabStyle}`}>
                         {tab.label}
                      </button>
                   ))
@@ -52,10 +56,7 @@ const RentalSearchHero = () => {
                            <RentalFormGrid tab={activeTab}/>
                            <hr className="my-4 border-t border-gray-300"/>
                            <div className="flex items-center justify-between mt-4">
-                              <button
-                                 onClick={() => setIsShowDeliveryForm(!isShowDeliveryForm)}
-                                 className="flex items-center pt-4 gap-mob-5 text-mob-16 font-semibold leading-[140%] underline sm:gap-tab-5 sm:text-tab-16 lg:gap-web-6 lg:text-web-16 text-black"
-                              >
+                              <button  onClick={() => setIsShowDeliveryForm(!isShowDeliveryForm)}  className={ deliveryToMeStyle }>
                                  <span className="inline-block h-[20px] w-[20px]">
                                     <Image
                                        src={`icons/deliver-to-me-car.svg`}
@@ -68,9 +69,7 @@ const RentalSearchHero = () => {
                                  Deliver to me
                               </button>
 
-                              <button type="submit"
-                                 className="ml-auto inline-flex items-center justify-center bg-blue-900 text-white text-sm sm:text-base lg:text-lg leading-none font-semibold uppercase border border-blue-900 hover:bg-black px-5 py-3 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50"
-                              >
+                              <button type="submit" className={submitButtonStyle}>
                                  Search
                               </button>
                            </div>

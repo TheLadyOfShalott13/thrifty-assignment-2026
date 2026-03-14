@@ -2,6 +2,7 @@
 
 import { LocationSelectProps } from "@/app/interfaces/location-select-props";
 import { LOCATIONS } from "@/app/constants/locations";
+import { selectStyle } from "@/app/styles/form-styles";
 
 
 export default function LocationSelector({
@@ -17,7 +18,7 @@ export default function LocationSelector({
          name={name}
          value={value}
          onChange={(e) => onChange?.(e.target.value)}
-         className={`border rounded-md px-3 py-2 text-gray-900 w-full`}
+         className={selectStyle}
          disabled={!emirate}
       >
          <option value="">Select</option>

@@ -5,22 +5,16 @@ import EmiratesSelect from "@/app/components/form-elements/select-dropdown/emira
 import { PossibleEmirateValues } from "@/app/constants/emirates";
 import LocationSelector from "@/app/components/form-elements/select-dropdown/location-selector";
 import { PossibleLocationValues } from "@/app/constants/locations";
+import {singleColStyle, labelStyle, formInputStyle, doubleColStyle} from "@/app/styles/form-styles";
 
 export function CollectionInformation() {
-
-   /* styles */
-   const labelStyle = "mb-1.5 block text-sm font-semibold leading-tight lg:text-[14px] text-black";
-   const inputStyle = "flex h-10 px-3 py-2 rounded-md w-full items-center justify-between bg-white text-sm outline-none transition-all focus:border-blue-500 text-black";
-   const elementStyle = "col-span-1";
-
-   /* state management */
    const [dropoffEmirate, setDropoffEmirate] = useState<PossibleEmirateValues | "">("");
    const [dropoffLocation, setDropoffLocation] = useState<PossibleLocationValues | "">("");
    const [dropoffAddress, setDropoffAddress] = useState<string>("");
 
 
-   return <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-      <div className={elementStyle}>
+   return <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
+      <div className={singleColStyle}>
          <label className={labelStyle}>Collection City</label>
          <EmiratesSelect
             name="collection-city"
@@ -32,7 +26,7 @@ export function CollectionInformation() {
          />
       </div>
 
-      <div className={elementStyle}>
+      <div className={singleColStyle}>
          <label className={labelStyle}>Collection Area</label>
          <LocationSelector
             emirate={dropoffEmirate as PossibleEmirateValues}
@@ -42,12 +36,12 @@ export function CollectionInformation() {
          />
       </div>
 
-      <div className={elementStyle}>
+      <div className={doubleColStyle}>
          <label className={labelStyle}>Collection Address</label>
-         <div className={inputStyle}>
+         <div className={ formInputStyle }>
             <input
                type="text"
-               className={ inputStyle }
+               className={ formInputStyle }
                value={ dropoffAddress }
                name="collection-address"
                onChange={(e) => setDropoffAddress(e.target.value)}

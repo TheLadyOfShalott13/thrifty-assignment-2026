@@ -12,14 +12,9 @@ import { CollectionInformation } from "@/app/components/rental-collection/collec
 import { CollectionTypePicker } from "@/app/components/rental-collection/collection-type-picker";
 import { DropoffInformation } from "@/app/components/rental-dropoff/dropoff-information";
 import { ReturnTypePicker } from "@/app/components/return-type-picker";
+import { formInputStyle, labelStyle, singleColStyle } from "@/app/styles/form-styles";
 
 export default function DeliveryForm({ tab = "daily" }: RentalFormGridProps) {
-   /* styles */
-   const labelStyle = "mb-1.5 block text-sm font-semibold leading-tight lg:text-[14px] text-black";
-   const inputStyle = "flex h-10 px-3 py-2 rounded-md w-full items-center justify-between bg-white text-sm outline-none transition-all focus:border-blue-500 text-black";
-   const elementStyle = "col-span-1";
-
-   /* state management */
    const [deliveryCity, setDeliveryCity] = useState<PossibleEmirateValues | "">("");
    const [deliveryArea, setDeliveryArea] = useState<PossibleLocationValues | "">("");
    const [deliveryAddress, setDeliveryAddress] = useState<string>("");
@@ -38,7 +33,7 @@ export default function DeliveryForm({ tab = "daily" }: RentalFormGridProps) {
             </p>
          </div>
          <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
-            <div className={elementStyle}>
+            <div className={singleColStyle}>
                <label className={labelStyle}>Delivery City</label>
                <EmiratesSelect
                   name="delivery-city"
@@ -64,7 +59,7 @@ export default function DeliveryForm({ tab = "daily" }: RentalFormGridProps) {
                <label className={labelStyle}>Delivery Address</label>
                <input
                   type="text"
-                  className={ inputStyle }
+                  className={ formInputStyle }
                   value={ deliveryAddress }
                   name="delivery-area"
                   onChange={(e) => setDeliveryAddress(e.target.value)}
@@ -77,21 +72,19 @@ export default function DeliveryForm({ tab = "daily" }: RentalFormGridProps) {
                <input
                   type="date"
                   defaultValue={getDatePlusDays()}
-                  className={inputStyle}
+                  className={formInputStyle}
                   name="delivery-date"
                />
             </div>
 
             <div className="col-span-2">
                <label className={labelStyle}>Delivery Time</label>
-               <div className={inputStyle}>
-                  <input
-                     type="time"
-                     defaultValue="08:00"
-                     className={inputStyle}
-                     name="delivery-time"
-                  />
-               </div>
+               <input
+                   type="time"
+                   defaultValue="08:00"
+                   className={formInputStyle}
+                   name="delivery-time"
+               />
             </div>
          </div>
          <div>

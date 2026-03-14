@@ -2,6 +2,7 @@
 
 import { EMIRATES } from "@/app/constants/emirates";
 import { EmiratesSelectProps } from "@/app/interfaces/emirates-select-props";
+import { selectStyle } from "@/app/styles/form-styles";
 
 
 export default function EmiratesSelect({
@@ -14,7 +15,7 @@ export default function EmiratesSelect({
          name={name}
          value={value}
          onChange={(e) => onChange?.(e.target.value)}
-         className={`border rounded-md px-3 py-2 text-gray-900 w-full`}
+         className={selectStyle}
       >
          <option value="">Select</option>
          {

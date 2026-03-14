@@ -7,13 +7,10 @@ import { PossibleEmirateValues } from "@/app/constants/emirates";
 import { PossibleLocationValues } from "@/app/constants/locations";
 import { RentalFormGridProps } from "@/app/interfaces/rental-form-grid-props";
 import { getDatePlusDays } from "@/app/utils/date-utility";
+import {formInputStyle, labelStyle} from "@/app/styles/form-styles";
 
 
 const RentalFormGrid = ({ tab = "daily" }: RentalFormGridProps) => {
-
-   /* styles */
-   const labelStyle = "mb-1.5 block text-sm font-semibold leading-tight lg:text-[14px] text-black";
-   const inputStyle = "flex h-10 px-3 py-2 rounded-md w-full items-center justify-between bg-white text-sm outline-none transition-all focus:border-blue-500 text-black";
    const elementStyle = "col-span-1";
 
    /* state management */
@@ -52,21 +49,19 @@ const RentalFormGrid = ({ tab = "daily" }: RentalFormGridProps) => {
             <input
                type="date"
                defaultValue={getDatePlusDays()}
-               className={inputStyle}
+               className={formInputStyle}
                name="pick-up-date"
             />
          </div>
 
          <div className={elementStyle}>
             <label className={labelStyle}>Pick Up Time</label>
-            <div className={inputStyle}>
-               <input
-                  type="time"
-                  defaultValue="08:00"
-                  className={inputStyle}
-                  name="pick-up-time"
-               />
-            </div>
+             <input
+                 type="time"
+                 defaultValue="08:00"
+                 className={formInputStyle}
+                 name="pick-up-time"
+             />
          </div>
 
          {
@@ -98,21 +93,19 @@ const RentalFormGrid = ({ tab = "daily" }: RentalFormGridProps) => {
                   <input
                      type="date"
                      defaultValue={getDatePlusDays(3)}
-                     className={inputStyle}
+                     className={formInputStyle}
                      name="drop-off-date"
                   />
                </div>
 
                <div className={elementStyle}>
                   <label className={labelStyle}>Drop off Time</label>
-                  <div className={inputStyle}>
-                     <input
-                        type="time"
-                        defaultValue="08:00"
-                        className={inputStyle}
-                        name="drop-off-time"
-                     />
-                  </div>
+                   <input
+                       type="time"
+                       defaultValue="08:00"
+                       className={formInputStyle}
+                       name="drop-off-time"
+                   />
                </div>
             </> : ""
 
