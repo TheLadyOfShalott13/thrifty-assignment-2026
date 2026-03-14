@@ -12,7 +12,7 @@ import { CollectionInformation } from "@/app/components/rental-collection/collec
 import { CollectionTypePicker } from "@/app/components/rental-collection/collection-type-picker";
 import { DropoffInformation } from "@/app/components/rental-dropoff/dropoff-information";
 import { ReturnTypePicker } from "@/app/components/return-type-picker";
-import { formInputStyle, labelStyle, singleColStyle } from "@/app/styles/form-styles";
+import {formInputStyle, labelStyle, singleColStyle, submitButtonStyle} from "@/app/styles/form-styles";
 
 export default function DeliveryForm({ tab = "daily" }: RentalFormGridProps) {
    const [deliveryCity, setDeliveryCity] = useState<PossibleEmirateValues | "">("");
@@ -122,14 +122,11 @@ export default function DeliveryForm({ tab = "daily" }: RentalFormGridProps) {
                      </div>
 
                      {/* Footer */}
-                     <div className="mt-mob-10 flex items-center justify-between border-t border-[#c2c2c259] pt-mob-20 sm:mt-tab-10 lg:mt-web-15">
+                     <div className="mt-mob-10 flex pt-4 items-center justify-between border-t border-[#c2c2c259] pt-mob-20 sm:mt-tab-10 lg:mt-web-15">
                         <p className="max-w-[70%] text-mob-14 sm:text-tab-15 lg:text-web-15">
                            *Additional charges for delivery and collection may apply.
                         </p>
-                        <button
-                           type="submit"
-                           className="inline-flex items-center justify-center bg-blue-900 text-white text-sm sm:text-base lg:text-lg leading-none font-semibold uppercase border border-blue-900 hover:bg-black px-5 py-3 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50"
-                        >
+                        <button type="submit" className={submitButtonStyle}>
                            Search
                         </button>
                      </div>

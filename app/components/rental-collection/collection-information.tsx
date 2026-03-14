@@ -13,7 +13,7 @@ export function CollectionInformation() {
    const [dropoffAddress, setDropoffAddress] = useState<string>("");
 
 
-   return <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
+   return <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5 pb-4">
       <div className={singleColStyle}>
          <label className={labelStyle}>Collection City</label>
          <EmiratesSelect
